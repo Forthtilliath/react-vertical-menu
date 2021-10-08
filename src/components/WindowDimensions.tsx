@@ -7,24 +7,22 @@ interface IProps {
 interface IState {
     width: number;
     height: number;
-    isMobile: boolean;
 }
 
 export default class WindowDimensions extends Component<IProps, IState> {
-    // state = { width: 0, height: 0, isMobile: false };
+
     constructor(props: IProps) {
         super(props);
-        this.state = { width: 0, height: 0, isMobile: false };
+        this.state = { width: 0, height: 0 };
     }
 
     render() {
-        // this.props.toggleMenu;
-
-        return (
-            <span>
-                Window size: {this.state.width} x {this.state.height}
-            </span>
-        );
+        return <></>;
+        // return (
+        //     <span>
+        //         Window size: {this.state.width} x {this.state.height}
+        //     </span>
+        // );
     }
 
     isMobile = () => this.state.width < 576;
@@ -32,10 +30,9 @@ export default class WindowDimensions extends Component<IProps, IState> {
     updateDimensions = () => {
         this.setState({
             width: window.innerWidth,
-            height: window.innerHeight,
-            isMobile: this.isMobile()
+            height: window.innerHeight
         });
-        this.props.setIsMobile(this.state.isMobile);
+        this.props.setIsMobile(this.isMobile());
     };
 
     componentDidMount() {

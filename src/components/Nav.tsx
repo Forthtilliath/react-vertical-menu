@@ -20,7 +20,7 @@ const Nav = () => {
     }, [isMobile]);
 
     return (
-        <nav className={isMobile && isOpen ? "open" : ""}>
+        <nav className={(isMobile && isOpen) ? "open" : ""}>
             <WindowDimensions setIsMobile={setIsMobile} />
             <div className="logo">
                 <NavLinkDataset to="/" data-label="Accueil">
@@ -50,7 +50,10 @@ const Nav = () => {
                     <VueJS />
                 </NavLinkDataset>
             </div>
-            <div className="close" onClick={() => toggleMenu(false)}>
+            <div className="btn-open" onClick={() => setIsOpen(true)}>
+                Open
+            </div>
+            <div className="btn-close" onClick={() => setIsOpen(false)}>
                 X
             </div>
         </nav>
