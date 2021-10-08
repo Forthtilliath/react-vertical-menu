@@ -18,11 +18,6 @@ export default class WindowDimensions extends Component<IProps, IState> {
 
     render() {
         return <></>;
-        // return (
-        //     <span>
-        //         Window size: {this.state.width} x {this.state.height}
-        //     </span>
-        // );
     }
 
     isMobile = () => this.state.width < 576;
